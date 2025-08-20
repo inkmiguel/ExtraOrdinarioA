@@ -18,6 +18,9 @@ export class LoginComponent {
             const q = query(userRef, where('email', '==', this.correo), where('password', '==', this.contrasena));
             const querySnapshot = await getDocs(q);
             if (!querySnapshot.empty) {
+                // Guardar el usuario logueado en localStorage (solo el primero encontrado)
+                const userData = querySnapshot.docs[0].data();
+                localStorage.setItem('usuarioLogueado', JSON.stringify(userData));
                 alert('¡Login exitoso!');
                 this.router.navigate(['/home']);
             } else {
