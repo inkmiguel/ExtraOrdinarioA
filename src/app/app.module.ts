@@ -10,11 +10,13 @@ import { AppComponent } from './app.component';
 import { ScriptComponent } from './components/script';
 
 import { environment } from 'src/environments/environment';
+import { registerComponent } from './components/registro/script.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ScriptComponent
+    ScriptComponent,
+    registerComponent
   ],
   imports: [
     BrowserModule,
