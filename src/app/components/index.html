@@ -4,14 +4,15 @@
     <a class="navbar-brand" href="#">Extraordinario</a>
     <form class="d-flex mx-auto" style="width: 400px;">
     </form>
+    <!-- llamamos el usuario logueado -->
     <span class="navbar-text ms-auto">
       {{ usuarioLogueado }}
     </span>
   </div>
 </nav>
-<!-- Contenido principal -->
+<!-- Contenido -->
 <div class="container mt-4">
-  <!-- Sección de autos -->
+  <!-- Sección para agregar -->
   <div class="container mt-5">
     <h3>Agregar Auto</h3>
     <form (ngSubmit)="agregarAuto()" #autoForm="ngForm" class="mb-4">

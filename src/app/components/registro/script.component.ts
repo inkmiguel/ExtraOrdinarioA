@@ -3,25 +3,11 @@ import { Router } from "@angular/router";
 import {
     Firestore,
     collection,
-    query,
-    where,
-    getDocs,
+
     addDoc
 } from "@angular/fire/firestore";
 
-import { User } from "src/app/template/registro";
 import { genereteID } from "../../plugins/id";
-
-
-const user:User = {
-    id: '',
-    password: '',
-    email: '',
-    modelo: '',
-    año: 2025,
-    category: '',
-    placas: ''
-}
 
 @Component({
     selector: 'app-script',
@@ -29,19 +15,20 @@ const user:User = {
     styleUrls: ['./styles.css']
 })
 export class registerComponent {
-    id: string = '';
-    usuario: string = '';
-    correo: string = '';
-    contrasena: string = '';
+    nombre = '';
+    usuario = '';
+    correo = '';
+    contrasena = '';
 
-    constructor(private firestore: Firestore, private router: Router) { }
+    constructor(private firestore: Firestore, private router: Router) {}
 
     async onSubmit() {
         try {
-            this.id = genereteID();
+            // gaurdamos el usuario en users
             const userRef = collection(this.firestore, 'users');
             await addDoc(userRef, {
-                id: this.id,
+                id: genereteID(),
+                nombre: this.nombre,
                 usuario: this.usuario,
                 email: this.correo,
                 password: this.contrasena
@@ -49,7 +36,7 @@ export class registerComponent {
             alert('Usuario registrado exitosamente');
             this.router.navigate(['/login']);
         } catch (error) {
-            console.error("Error registering user:", error);
+            console.error('Error registering user:', error);
         }
     }
 }

@@ -1,10 +1,16 @@
+<!-- Formulario del registro -->
 <div class="container mt-5">
   <div class="row justify-content-center">
     <div class="col-md-6">
       <div class="card">
         <div class="card-body">
           <h3 class="card-title text-center mb-4">Registro</h3>
+          <!-- enviar formulario cuando clike en el boton registrarse -->
           <form (ngSubmit)="onSubmit()" #registroForm="ngForm">
+            <div class="mb-3">
+              <label for="nombre" class="form-label">Nombre</label>
+              <input type="text" class="form-control" id="nombre" name="nombre" [(ngModel)]="nombre" required>
+            </div>
             <div class="mb-3">
               <label for="usuario" class="form-label">Usuario</label>
               <input type="text" class="form-control" id="usuario" name="usuario" [(ngModel)]="usuario" required>

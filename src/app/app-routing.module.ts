@@ -5,6 +5,7 @@ import { registerComponent } from './components/registro/script.component';
 import { LoginComponent } from './components/log/script.component';
 
 const routes: Routes = [
+  //Rutas para el registro, login y la pagina principal
   { path: '', component: registerComponent },
   { path: 'login', component: LoginComponent },
   { path: 'home', component: ScriptComponent }

@@ -15,12 +15,14 @@ import { LoginComponent } from './components/log/script.component';
 
 @NgModule({
   declarations: [
+    //Declaracion de cada componente de angular typescript
     AppComponent,
     ScriptComponent,
     registerComponent,
     LoginComponent
   ],
   imports: [
+    //Declaraciones de angular y firebase
     BrowserModule,
     AppRoutingModule,
     FormsModule,
