@@ -11,12 +11,14 @@ import { ScriptComponent } from './components/script';
 
 import { environment } from 'src/environments/environment';
 import { registerComponent } from './components/registro/script.component';
+import { LoginComponent } from './components/log/script.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ScriptComponent,
-    registerComponent
+    registerComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
